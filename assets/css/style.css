@@ -301,3 +301,18 @@
   width: 100%;
   color: #259921;
 }
+
+@media screen and (max-width: 768px){
+  .t_id, 
+  .t_category,
+  .j_id, 
+  .j_category { display: none; }
+
+  .t_joke, 
+  .j_joke { 
+    width: 90%;
+    padding: 0 5%;
+    text-align: center;
+  }
+  
+}
