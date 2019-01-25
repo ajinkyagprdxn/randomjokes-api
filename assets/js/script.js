@@ -36,9 +36,8 @@ $(document).ready(function () {
 
                 const $loader = $(".loader");
                 var $loadingstatus = false;
-                var $abc = data[Math.floor(Math.random()*data.length)];
-                console.log($abc);
-
+                var $abc = data[Math.floor(Math.random()*data.length)];                
+                
                 var $id = $abc.id;
                 var $category = $abc.category;
                 var $joke = $abc.body;
