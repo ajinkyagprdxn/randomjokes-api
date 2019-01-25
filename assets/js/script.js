@@ -2,7 +2,7 @@
 // Find Local File at: 'assets/vendor/stupidstuff.json'
 
 $(document).ready(function () {      
-
+    
     $.ajax({
 
         url: 'https://raw.githubusercontent.com/taivop/joke-dataset/master/stupidstuff.json', 
@@ -38,31 +38,36 @@ $(document).ready(function () {
 
                 const $loader = $(".loader");
                 var $loadingstatus = false;
-                var $abc = data[Math.floor(Math.random()*data.length)];                
 
-                var $id = $abc.id;
-                var $category = $abc.category;
-                var $joke = $abc.body;
+                var $randomnum = data[Math.floor(Math.random()*data.length)];                  
+                  
+                if($randomnum.body!='')
+                {                  
+                  var $id = $randomnum.id;
+                  var $category = $randomnum.category;
+                  var $joke = $randomnum.body;
 
-                var $datalist = $('#datalist');
-                $datalist.html(`
-                <li class="joketitles">
-                    <div class="t_id"><span>ID</span></div>
-                    <div class="t_category"><span>CATEGORY</span></div>
-                    <div class="t_joke"><p>JOKE</p></div>
-                </li>
-                <li class="jokedata">
-                    <div class="j_id"><span>(${$id})</span></div>
-                    <div class="j_category"><span>${$category}</span></div>
-                    <div class="j_joke"><p>${$joke}</p></div>
-                </li>`);
-                
-                $loadingstatus = true;
-                if ($loadingstatus == true) {
-                    $loader.addClass("hidden");
-                }
+                  var $datalist = $('#datalist');
+                  $datalist.html(`
+                  <li class="joketitles">
+                      <div class="t_id"><span>ID</span></div>
+                      <div class="t_category"><span>CATEGORY</span></div>
+                      <div class="t_joke"><p>JOKE</p></div>
+                  </li>
+                  <li class="jokedata">
+                      <div class="j_id"><span>(${$id})</span></div>
+                      <div class="j_category"><span>${$category}</span></div>
+                      <div class="j_joke"><p>${$joke}</p></div>
+                  </li>`);
+                  
+                  $loadingstatus = true;
+                  if ($loadingstatus == true) {
+                      $loader.addClass("hidden");
+                  }
+                } else {
+                  jokesdetails();
+                }             
             }
-
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log('Error in Database');             
