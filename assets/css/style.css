@@ -208,7 +208,7 @@
 .t_joke {
   display: inline-block;
   vertical-align: top;
-  color: #f00;
+  color: #227b99;
   font-family: sans-serif;
   font-weight: 700;
   line-height: 1.4;
@@ -295,4 +295,9 @@
 .bottomload img {
   width: 50px;
   height: auto;
+}
+
+.joketitlefull {
+  width: 100%;
+  color: #259921;
 }

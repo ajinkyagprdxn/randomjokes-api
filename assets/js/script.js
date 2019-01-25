@@ -24,12 +24,14 @@ $(document).ready(function () {
 
                 $($loademorebtn).addClass('hidden').removeClass('loademorebtn');    
                 $('.loader').removeClass('hidden loader').addClass('bottomload');
-                $('.j_id, .j_category, .j_joke').addClass('hidden');                
+                $('.t_id, .t_category').addClass('hidden');
+                $('.t_joke').addClass('joketitlefull').html('Joke loading...');                 
+                $('.jokedata').addClass('hidden');
                 setTimeout(function(){                    
                     jokesdetails();
                     $('.bottomload').addClass('hidden loader').removeClass('bottomload');  
                     $($loademorebtn).addClass('loademorebtn').removeClass('hidden');
-                }, 1000);
+                }, 2000);
             });
 
             function jokesdetails(){                
@@ -37,19 +39,19 @@ $(document).ready(function () {
                 const $loader = $(".loader");
                 var $loadingstatus = false;
                 var $abc = data[Math.floor(Math.random()*data.length)];                
-                
+
                 var $id = $abc.id;
                 var $category = $abc.category;
                 var $joke = $abc.body;
 
                 var $datalist = $('#datalist');
                 $datalist.html(`
-                <li>
+                <li class="joketitles">
                     <div class="t_id"><span>ID</span></div>
                     <div class="t_category"><span>CATEGORY</span></div>
                     <div class="t_joke"><p>JOKE</p></div>
                 </li>
-                <li>
+                <li class="jokedata">
                     <div class="j_id"><span>(${$id})</span></div>
                     <div class="j_category"><span>${$category}</span></div>
                     <div class="j_joke"><p>${$joke}</p></div>
