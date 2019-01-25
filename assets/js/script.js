@@ -25,7 +25,7 @@ $(document).ready(function () {
                 $($loademorebtn).addClass('hidden').removeClass('loademorebtn');    
                 $('.loader').removeClass('hidden loader').addClass('bottomload');
                 $('.t_id, .t_category').addClass('hidden');
-                $('.t_joke').addClass('joketitlefull').html('Joke loading...');                 
+                $('.t_joke').addClass('joketitlefull').html('Joke loading...😀');                 
                 $('.jokedata').addClass('hidden');
                 setTimeout(function(){                    
                     jokesdetails();
